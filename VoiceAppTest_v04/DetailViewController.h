@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HomeVoxNotificationRegion;
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) HomeVoxNotificationRegion* detailItem;
+
+@property (strong, nonatomic) IBOutlet UITextField* beaconUUIDTextField;
+@property (strong, nonatomic) IBOutlet UITextField* beaconMajorTextField;
+@property (strong, nonatomic) IBOutlet UITextField* beaconMinorTextField;
+@property (strong, nonatomic) IBOutlet UITextField* helloMessageTextField;
+@property (strong, nonatomic) IBOutlet UITextField* goodbyeMessageTextField;
 
 @end
 

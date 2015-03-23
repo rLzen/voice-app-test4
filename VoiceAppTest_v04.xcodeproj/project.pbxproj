@@ -15,6 +15,13 @@
 		AB262FBC1ABF32E70070DB20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB262FBB1ABF32E70070DB20 /* Images.xcassets */; };
 		AB262FBF1ABF32E70070DB20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB262FBD1ABF32E70070DB20 /* LaunchScreen.xib */; };
 		AB262FCB1ABF32E70070DB20 /* VoiceAppTest_v04Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB262FCA1ABF32E70070DB20 /* VoiceAppTest_v04Tests.m */; };
+		AB262FD61ABF76050070DB20 /* BeaconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB262FD51ABF76050070DB20 /* BeaconTableViewCell.m */; };
+		AB262FD91ABF7F260070DB20 /* HomeVoxNotificationRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = AB262FD81ABF7F260070DB20 /* HomeVoxNotificationRegion.m */; };
+		AB8E40531ABFB8DA0028CFD7 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40511ABFB8DA0028CFD7 /* OpenEars.framework */; };
+		AB8E40541ABFB8DA0028CFD7 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40521ABFB8DA0028CFD7 /* Slt.framework */; };
+		AB8E40561ABFB9000028CFD7 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB8E40551ABFB9000028CFD7 /* AcousticModelEnglish.bundle */; };
+		AB8E40581ABFB9100028CFD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40571ABFB9100028CFD7 /* AVFoundation.framework */; };
+		AB8E405A1ABFB9190028CFD7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,15 @@
 		AB262FC41ABF32E70070DB20 /* VoiceAppTest_v04Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceAppTest_v04Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB262FC91ABF32E70070DB20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB262FCA1ABF32E70070DB20 /* VoiceAppTest_v04Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceAppTest_v04Tests.m; sourceTree = "<group>"; };
+		AB262FD41ABF76050070DB20 /* BeaconTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconTableViewCell.h; sourceTree = "<group>"; };
+		AB262FD51ABF76050070DB20 /* BeaconTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTableViewCell.m; sourceTree = "<group>"; };
+		AB262FD71ABF7F260070DB20 /* HomeVoxNotificationRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVoxNotificationRegion.h; sourceTree = "<group>"; };
+		AB262FD81ABF7F260070DB20 /* HomeVoxNotificationRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVoxNotificationRegion.m; sourceTree = "<group>"; };
+		AB8E40511ABFB8DA0028CFD7 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Framework/OpenEars.framework; sourceTree = "<group>"; };
+		AB8E40521ABFB8DA0028CFD7 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = Framework/Slt.framework; sourceTree = "<group>"; };
+		AB8E40551ABFB9000028CFD7 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		AB8E40571ABFB9100028CFD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8E405A1ABFB9190028CFD7 /* AudioToolbox.framework in Frameworks */,
+				AB8E40581ABFB9100028CFD7 /* AVFoundation.framework in Frameworks */,
+				AB8E40531ABFB8DA0028CFD7 /* OpenEars.framework in Frameworks */,
+				AB8E40541ABFB8DA0028CFD7 /* Slt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +86,11 @@
 		AB262F9F1ABF32E70070DB20 = {
 			isa = PBXGroup;
 			children = (
+				AB8E40551ABFB9000028CFD7 /* AcousticModelEnglish.bundle */,
+				AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */,
+				AB8E40571ABFB9100028CFD7 /* AVFoundation.framework */,
+				AB8E40511ABFB8DA0028CFD7 /* OpenEars.framework */,
+				AB8E40521ABFB8DA0028CFD7 /* Slt.framework */,
 				AB262FAA1ABF32E70070DB20 /* VoiceAppTest_v04 */,
 				AB262FC71ABF32E70070DB20 /* VoiceAppTest_v04Tests */,
 				AB262FA91ABF32E70070DB20 /* Products */,
@@ -94,6 +119,10 @@
 				AB262FBB1ABF32E70070DB20 /* Images.xcassets */,
 				AB262FBD1ABF32E70070DB20 /* LaunchScreen.xib */,
 				AB262FAB1ABF32E70070DB20 /* Supporting Files */,
+				AB262FD41ABF76050070DB20 /* BeaconTableViewCell.h */,
+				AB262FD51ABF76050070DB20 /* BeaconTableViewCell.m */,
+				AB262FD71ABF7F260070DB20 /* HomeVoxNotificationRegion.h */,
+				AB262FD81ABF7F260070DB20 /* HomeVoxNotificationRegion.m */,
 			);
 			path = VoiceAppTest_v04;
 			sourceTree = "<group>";
@@ -173,6 +202,11 @@
 				TargetAttributes = {
 					AB262FA71ABF32E70070DB20 = {
 						CreatedOnToolsVersion = 6.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					AB262FC31ABF32E70070DB20 = {
 						CreatedOnToolsVersion = 6.2;
@@ -204,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8E40561ABFB9000028CFD7 /* AcousticModelEnglish.bundle in Resources */,
 				AB262FBA1ABF32E70070DB20 /* Main.storyboard in Resources */,
 				AB262FBF1ABF32E70070DB20 /* LaunchScreen.xib in Resources */,
 				AB262FBC1ABF32E70070DB20 /* Images.xcassets in Resources */,
@@ -226,8 +261,10 @@
 			files = (
 				AB262FB11ABF32E70070DB20 /* AppDelegate.m in Sources */,
 				AB262FB41ABF32E70070DB20 /* MasterViewController.m in Sources */,
+				AB262FD61ABF76050070DB20 /* BeaconTableViewCell.m in Sources */,
 				AB262FAE1ABF32E70070DB20 /* main.m in Sources */,
 				AB262FB71ABF32E70070DB20 /* DetailViewController.m in Sources */,
+				AB262FD91ABF7F260070DB20 /* HomeVoxNotificationRegion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +386,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = VoiceAppTest_v04/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +400,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = VoiceAppTest_v04/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +463,7 @@
 				AB262FD01ABF32E70070DB20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB262FD11ABF32E70070DB20 /* Build configuration list for PBXNativeTarget "VoiceAppTest_v04Tests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +472,7 @@
 				AB262FD31ABF32E70070DB20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

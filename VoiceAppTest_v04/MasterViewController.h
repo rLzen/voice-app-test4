@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <OpenEars/OEPocketsphinxController.h>
+#import <OpenEars/OELanguageModelGenerator.h>
+#import <OpenEars/OEAcousticModel.h>
+#import <OpenEars/OEEventsObserver.h>
+#import <OpenEars/OEFliteController.h>
+#import <Slt/Slt.h>
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <AVAudioRecorderDelegate,
+AVAudioPlayerDelegate, OEEventsObserverDelegate>
 
+@property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
 
 @end
 
