@@ -97,7 +97,6 @@
 
 - (void) pocketsphinxDidDetectSpeech {
     NSLog(@"Pocketsphinx has detected speech.");
-  //  self.statusTextView.text = @"Status: Pocketsphinx has detected speech.";
 }
 
 - (void) pocketsphinxDidDetectFinishedSpeech {
@@ -231,7 +230,9 @@
         cell.beaconProximityLabel.text = proximityDescriptions[region.lastProximity];
         cell.beaconRangeLabel.text = [NSString stringWithFormat:@"%.2fm", region.lastAccuracy];
         cell.beaconRSSILabel.text = [NSString stringWithFormat:@"%lddB", region.lastRSSI];
-        // starts listening 
+        
+        // this a test for start listening
+        // range will be required
         if (![OEPocketsphinxController sharedInstance].isListening) {
             
             [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
@@ -245,7 +246,9 @@
         cell.beaconProximityLabel.text = @"Not In Range";
         cell.beaconRangeLabel.text = @"0.0m";
         cell.beaconRSSILabel.text = @"0dB";
+        
         // stops listening
+        // taking too long to stop listening
         if ([OEPocketsphinxController sharedInstance].isListening) {
             [[OEPocketsphinxController sharedInstance] stopListening];
         }
