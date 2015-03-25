@@ -35,6 +35,13 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewNotification:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
+    // Testing accesory browser
+    self.accessoryBrowser = [[HMAccessoryBrowser alloc] init];
+    self.accessoryBrowser.delegate = self;
+    
+    [self.accessoryBrowser startSearchingForNewAccessories];
+    
+    
     // I NEED TO DOCUMENT THIS BETTER
     self.fliteController = [[OEFliteController alloc] init];
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
@@ -55,7 +62,7 @@
                                     @"TURN OFF",
                                     @"GO",
                                     @"LEFT",
-                                    @"MODEL",
+                                    @"MODE",
                                     @"RIGHT",
                                     @"LIGHTS"];
     
@@ -72,6 +79,11 @@
         self.pathToFirstDynamicallyGeneratedDictionary = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@"FirstOpenEarsDynamicLanguageModel"];
     }
 }
+
+
+
+
+
 
 #pragma mark - OpenEars
 
@@ -158,6 +170,7 @@
     self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f
                                                         target:self
                                                       selector:@selector(updateTable:) userInfo:nil repeats:YES];
+   
 }
 
 - (void)insertNewNotification:(id)sender
@@ -172,6 +185,7 @@
     // Stop our update timer while the view is not in the foreground
     [_updateTimer invalidate];
     _updateTimer = nil;
+    [self.accessoryBrowser stopSearchingForNewAccessories];
 }
 
 #pragma mark - Segues

@@ -22,6 +22,9 @@
 		AB8E40561ABFB9000028CFD7 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB8E40551ABFB9000028CFD7 /* AcousticModelEnglish.bundle */; };
 		AB8E40581ABFB9100028CFD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40571ABFB9100028CFD7 /* AVFoundation.framework */; };
 		AB8E405A1ABFB9190028CFD7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */; };
+		ABB731831AC35EC900F830EE /* AccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB731821AC35EC900F830EE /* AccessoryViewController.m */; };
+		ABB731861AC3600D00F830EE /* DetailAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB731851AC3600D00F830EE /* DetailAccessoryViewController.m */; };
+		ABB731891AC3604F00F830EE /* AccessoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB731881AC3604F00F830EE /* AccessoryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,12 @@
 		AB8E40551ABFB9000028CFD7 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		AB8E40571ABFB9100028CFD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		ABB731811AC35EC900F830EE /* AccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessoryViewController.h; path = ../AccessoryViewController.h; sourceTree = "<group>"; };
+		ABB731821AC35EC900F830EE /* AccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessoryViewController.m; path = ../AccessoryViewController.m; sourceTree = "<group>"; };
+		ABB731841AC3600D00F830EE /* DetailAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailAccessoryViewController.h; sourceTree = "<group>"; };
+		ABB731851AC3600D00F830EE /* DetailAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailAccessoryViewController.m; sourceTree = "<group>"; };
+		ABB731871AC3604F00F830EE /* AccessoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessoryTableViewCell.h; path = ../AccessoryTableViewCell.h; sourceTree = "<group>"; };
+		ABB731881AC3604F00F830EE /* AccessoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessoryTableViewCell.m; path = ../AccessoryTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,14 +124,15 @@
 				AB262FB31ABF32E70070DB20 /* MasterViewController.m */,
 				AB262FB51ABF32E70070DB20 /* DetailViewController.h */,
 				AB262FB61ABF32E70070DB20 /* DetailViewController.m */,
-				AB262FB81ABF32E70070DB20 /* Main.storyboard */,
-				AB262FBB1ABF32E70070DB20 /* Images.xcassets */,
-				AB262FBD1ABF32E70070DB20 /* LaunchScreen.xib */,
-				AB262FAB1ABF32E70070DB20 /* Supporting Files */,
 				AB262FD41ABF76050070DB20 /* BeaconTableViewCell.h */,
 				AB262FD51ABF76050070DB20 /* BeaconTableViewCell.m */,
 				AB262FD71ABF7F260070DB20 /* HomeVoxNotificationRegion.h */,
 				AB262FD81ABF7F260070DB20 /* HomeVoxNotificationRegion.m */,
+				AB262FB81ABF32E70070DB20 /* Main.storyboard */,
+				AB262FBB1ABF32E70070DB20 /* Images.xcassets */,
+				AB262FBD1ABF32E70070DB20 /* LaunchScreen.xib */,
+				AB262FAB1ABF32E70070DB20 /* Supporting Files */,
+				ABB7318A1AC3607C00F830EE /* Accessory */,
 			);
 			path = VoiceAppTest_v04;
 			sourceTree = "<group>";
@@ -151,6 +161,19 @@
 				AB262FC91ABF32E70070DB20 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABB7318A1AC3607C00F830EE /* Accessory */ = {
+			isa = PBXGroup;
+			children = (
+				ABB731811AC35EC900F830EE /* AccessoryViewController.h */,
+				ABB731821AC35EC900F830EE /* AccessoryViewController.m */,
+				ABB731841AC3600D00F830EE /* DetailAccessoryViewController.h */,
+				ABB731851AC3600D00F830EE /* DetailAccessoryViewController.m */,
+				ABB731871AC3604F00F830EE /* AccessoryTableViewCell.h */,
+				ABB731881AC3604F00F830EE /* AccessoryTableViewCell.m */,
+			);
+			name = Accessory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,11 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB731861AC3600D00F830EE /* DetailAccessoryViewController.m in Sources */,
+				ABB731891AC3604F00F830EE /* AccessoryTableViewCell.m in Sources */,
 				AB262FB11ABF32E70070DB20 /* AppDelegate.m in Sources */,
 				AB262FB41ABF32E70070DB20 /* MasterViewController.m in Sources */,
 				AB262FD61ABF76050070DB20 /* BeaconTableViewCell.m in Sources */,
 				AB262FAE1ABF32E70070DB20 /* main.m in Sources */,
 				AB262FB71ABF32E70070DB20 /* DetailViewController.m in Sources */,
+				ABB731831AC35EC900F830EE /* AccessoryViewController.m in Sources */,
 				AB262FD91ABF7F260070DB20 /* HomeVoxNotificationRegion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
