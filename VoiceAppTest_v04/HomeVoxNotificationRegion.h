@@ -24,5 +24,5 @@
 @property (assign, nonatomic) CLLocationAccuracy lastAccuracy;      // Accuracy of beacon as of last update
 @property (assign, nonatomic) NSInteger lastRSSI;                   // Signal strength of beacon as of last update
 
-
+@property (strong, nonatomic) NSString *accessoryUUID;        // Accessory information
 @end

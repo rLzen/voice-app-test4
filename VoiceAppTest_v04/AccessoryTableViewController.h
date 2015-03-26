@@ -1,5 +1,5 @@
 //
-//  AccessoryViewController.h
+//  AccessoryTableViewController.h
 //  VoiceAppTest_v04
 //
 //  Created by Richard Lorenzen on 3/25/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccessoryViewController : UITableViewController
+@interface AccessoryTableViewController : UITableViewController
 
 @end

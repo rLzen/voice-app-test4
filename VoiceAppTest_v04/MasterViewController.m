@@ -32,7 +32,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewNotification:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                               target:self
+                                                                               action:@selector(insertNewNotification:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
     // Testing accesory browser
@@ -204,7 +206,8 @@
             [[segue destinationViewController] setDetailItem:[delegate notificationRegionAtIndex:indexPath.row]];
         }
         
-    }}
+    }
+}
 
 #pragma mark - Table View
 

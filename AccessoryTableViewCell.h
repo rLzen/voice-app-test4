@@ -10,4 +10,7 @@
 
 @interface AccessoryTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *accessoryUUIDLabel;
+@property (strong, nonatomic) IBOutlet UILabel *accessoryBeaconUUIDLabel;
+
 @end

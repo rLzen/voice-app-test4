@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class HomeVoxNotificationRegion;
 @interface DetailAccessoryViewController : UIViewController
+
+
+@property (strong, nonatomic) IBOutlet UITextField *accessoryUUIDTextField;
+@property (strong, nonatomic) IBOutlet UITextField *connectedBeaconUUIDTextField;
+
+@property (strong, nonatomic) HomeVoxNotificationRegion *accessoryItem;
 
 @end

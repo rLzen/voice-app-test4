@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Master-->
+        <!--Item1-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                <navigationController title="Item1" id="rS3-R9-Ivy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="vlv-0t-0aU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
@@ -42,30 +42,38 @@
             </objects>
             <point key="canvasLocation" x="-212" y="-1660"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Master Accessory-->
         <scene sceneID="oDS-Xo-4Yv">
             <objects>
-                <tableViewController id="U5b-5f-jsO" customClass="AccessoryViewController" sceneMemberID="viewController">
+                <tableViewController title="Master Accessory" id="U5b-5f-jsO" customClass="AccessoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fbZ-9n-8vd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AccessoryCell" textLabel="I0M-PI-0JE" style="IBUITableViewCellStyleDefault" id="xTb-lS-Mgb">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AccessoryCell" id="xTb-lS-Mgb" customClass="AccessoryTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTb-lS-Mgb" id="IhN-Cg-vcC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I0M-PI-0JE">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRd-XD-N6u">
+                                            <rect key="frame" x="14" y="1" width="281" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nq-QN-7s6">
+                                            <rect key="frame" x="14" y="23" width="281" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mdB-iq-fS5" kind="showDetail" id="Y0L-Bm-DZe"/>
+                                    <outlet property="accessoryBeaconUUIDLabel" destination="4Nq-QN-7s6" id="sYm-35-YxO"/>
+                                    <outlet property="accessoryUUIDLabel" destination="FRd-XD-N6u" id="lWz-xv-FDK"/>
+                                    <segue destination="mdB-iq-fS5" kind="show" identifier="showDetailAccessory" id="Y0L-Bm-DZe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,16 +82,16 @@
                             <outlet property="delegate" destination="U5b-5f-jsO" id="XMR-Sn-qZh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="EG6-8Z-gVD"/>
+                    <navigationItem key="navigationItem" title="Accesories" id="EG6-8Z-gVD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTF-0f-dxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-912" y="66"/>
+            <point key="canvasLocation" x="-912" y="64"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Accessory-->
         <scene sceneID="2Hq-8S-PQA">
             <objects>
-                <viewController id="mdB-iq-fS5" sceneMemberID="viewController">
+                <viewController title="Detail Accessory" id="mdB-iq-fS5" customClass="DetailAccessoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L8s-61-8Dr"/>
                         <viewControllerLayoutGuide type="bottom" id="jOd-0a-qLG"/>
@@ -123,6 +131,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="RegisterAccessory:" destination="mdB-iq-fS5" eventType="touchUpInside" id="MW5-jc-JjG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,6 +152,10 @@
                             <constraint firstItem="BL1-fo-WvW" firstAttribute="top" secondItem="DnU-if-1Ra" secondAttribute="bottom" constant="8" symbolic="YES" id="sxB-1u-dCP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accessoryUUIDTextField" destination="zUu-yo-M0L" id="gZc-tq-aqw"/>
+                        <outlet property="connectedBeaconUUIDTextField" destination="BL1-fo-WvW" id="9dA-9X-xlf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FoE-7L-ch5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
