@@ -13,13 +13,12 @@
 #import <OpenEars/OEEventsObserver.h>
 #import <OpenEars/OEFliteController.h>
 #import <Slt/Slt.h>
-#import <HomeKit/HomeKit.h>
 
 @interface MasterViewController : UITableViewController <AVAudioRecorderDelegate,
-AVAudioPlayerDelegate, OEEventsObserverDelegate, HMAccessoryBrowserDelegate>
+AVAudioPlayerDelegate, OEEventsObserverDelegate >
 
 @property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
-@property HMAccessoryBrowser *accessoryBrowser;
+
 
 @end
 

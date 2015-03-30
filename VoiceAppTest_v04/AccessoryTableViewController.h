@@ -9,8 +9,10 @@
 @import UIKit;
 @import HomeKit;
 @import ExternalAccessory;
+#import "MasterViewController.h"
 
 
-@interface AccessoryTableViewController : UITableViewController <HMAccessoryBrowserDelegate, EAWiFiUnconfiguredAccessoryBrowserDelegate, HMHomeDelegate>
+
+@interface AccessoryTableViewController : UITableViewController 
 
 @end

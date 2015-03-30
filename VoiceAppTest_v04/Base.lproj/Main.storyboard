@@ -6,11 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item1-->
+        <!--Beacon Nav-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController title="Item1" id="rS3-R9-Ivy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vlv-0t-0aU"/>
+                <navigationController title="Beacon Nav" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Beacon" id="vlv-0t-0aU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="-212" y="-1660"/>
         </scene>
-        <!--Master Accessory-->
+        <!--Add Accessories-->
         <scene sceneID="oDS-Xo-4Yv">
             <objects>
-                <tableViewController title="Master Accessory" id="U5b-5f-jsO" customClass="AccessoryTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Add Accessories" id="U5b-5f-jsO" customClass="AccessoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fbZ-9n-8vd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTb-lS-Mgb" id="IhN-Cg-vcC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Accessory" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29D-R4-Xb4">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Accessory" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29D-R4-Xb4">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,14 +65,14 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="AddedAccessoryCell" textLabel="Fsc-6m-fDa" style="IBUITableViewCellStyleDefault" id="0lC-2n-90H">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="AddedAccessoryCell" textLabel="Fsc-6m-fDa" style="IBUITableViewCellStyleDefault" id="0lC-2n-90H">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0lC-2n-90H" id="4Z3-ps-XyT">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Added Accessory" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fsc-6m-fDa">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Added Accessory" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fsc-6m-fDa">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -85,93 +85,110 @@
                             <outlet property="delegate" destination="U5b-5f-jsO" id="XMR-Sn-qZh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Accesories" id="EG6-8Z-gVD"/>
+                    <navigationItem key="navigationItem" title="Add Accessories" id="EG6-8Z-gVD">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="hzu-q7-bAo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="JeJ-9E-YPm">
+                            <connections>
+                                <action selector="dismiss" destination="U5b-5f-jsO" id="HFK-uX-y6p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="mdB-iq-fS5" kind="show" identifier="AddAccessory" id="Kpu-gP-P18"/>
+                        <segue destination="a0x-Bc-haR" kind="show" identifier="Add Accesory" id="6Sc-4z-JuS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTF-0f-dxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-912" y="64"/>
         </scene>
-        <!--Detail Accessory-->
-        <scene sceneID="2Hq-8S-PQA">
+        <!--Accessory-->
+        <scene sceneID="Unq-FP-xRr">
             <objects>
-                <viewController title="Detail Accessory" id="mdB-iq-fS5" customClass="DetailAccessoryViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Z4W-nj-53a">
+                <tableViewController title="Accessory" id="a0x-Bc-haR" customClass="DetailAccessoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="0nh-k4-kLD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Name" id="WUv-cg-POn">
+                            <tableViewSection headerTitle="Name" id="cFj-Rf-Mdj">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oUf-bk-Owy">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5SH-cc-C0D">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oUf-bk-Owy" id="69y-e1-tgf">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Assigned Beacon" id="9Y4-KS-Nbi">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BeaconCell" textLabel="lkJ-hz-UWC" style="IBUITableViewCellStyleDefault" id="9xc-GR-UEV">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9xc-GR-UEV" id="6cM-RR-LCE">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5SH-cc-C0D" id="Fay-AZ-5EJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Beacon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lkJ-hz-UWC">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Accessory Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="teN-Gj-wWi">
+                                                    <rect key="frame" x="8" y="10" width="268" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="didChangeNameField:" destination="a0x-Bc-haR" eventType="editingChanged" id="5CU-kC-sep"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="Ph1-DT-q04">
+                            <tableViewSection headerTitle="Beacon" id="hvI-Hm-LtG">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="IdentifyCell" textLabel="NMK-Bo-Jea" style="IBUITableViewCellStyleDefault" id="0FX-qX-98X">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wVB-BP-MW0">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0FX-qX-98X" id="P8V-NU-SK1">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wVB-BP-MW0" id="soU-SY-WzH">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NMK-Bo-Jea">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="rgr-1G-OLR">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZGS-ox-eFG">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZGS-ox-eFG" id="JJI-lx-h3i">
+                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="a0x-Bc-haR" id="HUG-JV-fTf"/>
+                            <outlet property="delegate" destination="a0x-Bc-haR" id="7cq-cm-ojl"/>
+                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Detail Accessory" id="Ugu-PD-OPB">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="W63-bc-WOY"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="i9n-1C-jKO"/>
+                    <navigationItem key="navigationItem" title="Accessory" id="3kY-DD-GRP">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="BzI-6h-QTE">
+                            <connections>
+                                <action selector="dismiss:" destination="a0x-Bc-haR" id="N8J-vz-evP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="lWf-JS-QGW">
+                            <connections>
+                                <action selector="didTapAddButton" destination="a0x-Bc-haR" id="uYq-yl-evo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FoE-7L-ch5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="addButton" destination="lWf-JS-QGW" id="IJ3-sO-hMp"/>
+                        <outlet property="nameField" destination="teN-Gj-wWi" id="fS8-bM-xjs"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MNU-5z-BAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-912" y="828"/>
+            <point key="canvasLocation" x="-912" y="870"/>
         </scene>
-        <!--Item2-->
+        <!--Accessory Nav-->
         <scene sceneID="6XX-yt-kte">
             <objects>
-                <navigationController id="6bf-Sp-seC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item2" id="icW-C5-VRu"/>
+                <navigationController title="Accessory Nav" id="6bf-Sp-seC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Accessory" id="icW-C5-VRu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="czn-HV-r4n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="U5b-5f-jsO" kind="relationship" relationship="rootViewController" id="Rh7-Ae-lRX"/>
+                        <segue destination="U5b-5f-jsO" kind="relationship" relationship="rootViewController" id="5JC-WG-neD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DB-SC-UGs" userLabel="First Responder" sceneMemberID="firstResponder"/>

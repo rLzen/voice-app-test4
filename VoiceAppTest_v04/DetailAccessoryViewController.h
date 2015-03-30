@@ -23,6 +23,6 @@
 
 @property (nonatomic) HMAccessory *accessory;
 @property (nonatomic) id<ModifyAccessoryDelegate> delegate;
-@property (strong, nonatomic) HomeVoxNotificationRegion *accessoryItem;
+
 
 @end

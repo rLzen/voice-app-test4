@@ -10,9 +10,11 @@
 #import "DetailAccessoryViewController.h"
 #import "AppDelegate.h"
 #import "HomeVoxNotificationRegion.h"
+@import ExternalAccessory;
 
 
-@interface AccessoryTableViewController () 
+@interface AccessoryTableViewController () <HMAccessoryBrowserDelegate, EAWiFiUnconfiguredAccessoryBrowserDelegate, HMHomeDelegate, ModifyAccessoryDelegate>
+
 @property HMAccessoryBrowser *accessoryBrowser;
 @property EAWiFiUnconfiguredAccessoryBrowser *externalAccessoryBrowser;
 
@@ -31,7 +33,6 @@
 @end
 
 @implementation AccessoryTableViewController
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.accessoryBrowser = [HMAccessoryBrowser new];
@@ -41,10 +42,8 @@
     
     self.externalAccessorySyncQueue = dispatch_queue_create("com.rclzen.HMCatalog.externalSyncQueue", DISPATCH_QUEUE_SERIAL);
     
-    // We can't use the ExternalAccessory framework on the iPhone simulator.
-#if !TARGET_IPHONE_SIMULATOR
     self.externalAccessoryBrowser = [[EAWiFiUnconfiguredAccessoryBrowser alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
-#endif
+
     [self startBrowsing];
 }
 
@@ -92,17 +91,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewAccessory:(id)sender {
-    [self performSegueWithIdentifier:@"showDetailAccessory" sender:self];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Add Accessory"]) {
+        DetailAccessoryViewController *addAccessoryVC = segue.destinationViewController;
+        addAccessoryVC.accessory = self.selectedAccessory;
+        addAccessoryVC.delegate = self;
+    }
 }
+
+//- (void)insertNewAccessory:(id)sender {
+//    [self performSegueWithIdentifier:@"showDetailAccessory" sender:self];
+//}
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    // Return the number of sections.
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -113,9 +116,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    // Get the current accessory associated with this index.
     id accessory = self.displayedAccessories[indexPath.row];
-    
+    NSLog(@"%@", accessory);
     NSString *reuseIdentifier = @"AccessoryCell";
     
     // If this is an accessory that was recently added, use a different prototype.
@@ -126,18 +129,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.textLabel.text = [accessory name];
     return cell;
-
-
-        
-    return cell;
-}
-
-
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
 }
 
 /**
@@ -155,44 +146,25 @@
     }
 }
 
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+
+
+
+
+
+#pragma mark - ModifyAccessoryDelegate
+
+/**
+ *  Adds the accessory to our list of accessories added in this session,
+ *
+ *  @param viewController The accessory view controller.
+ *  @param accessory      The accessory that was saved.
+ */
+- (void)accessoryViewController:(DetailAccessoryViewController *)viewController
+               didSaveAccessory:(HMAccessory *)accessory {
+    [self.addedAccessories addObject:accessory];
 }
 
-
-
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    if ([[segue identifier] isEqualToString:@"showAccessoryDetail"]) {
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        if (indexPath)
-        {
-            // Our app delegate owns all of the notification regions, so we pull the value from there
-            AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            
-            // Tell the destination controller that we're editing an existing item by passing
-            // that item through.
-            [[segue destinationViewController] setAccessoryItem:[delegate notificationRegionAtIndex:indexPath.row]];
-        }
-        
-    }
-
-}
 
 
 #pragma mark - Accessory Storage
@@ -277,6 +249,24 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
     }
     return nil;
 }
+
+#pragma mark - HMAccessoryBrowserDelegate methods
+
+- (void)accessoryBrowser:(HMAccessoryBrowser *)browser didFindNewAccessory:(HMAccessory *)accessory {
+    [self reloadTable];
+    // If we have a stored accessory name, search for the
+    dispatch_async(self.externalAccessorySyncQueue, ^{
+        if ([accessory.name isEqualToString:self.externalAccessoryName]) {
+            self.externalAccessoryName = nil;
+            [self configureAccessory:accessory];
+        }
+    });
+}
+
+- (void)accessoryBrowser:(HMAccessoryBrowser *)browser didRemoveNewAccessory:(HMAccessory *)accessory {
+    [self reloadTable];
+}
+
 
 
 #pragma mark - EAWiFiUnconfiguredAccessoryBrowserDelegate methods

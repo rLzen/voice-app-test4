@@ -37,13 +37,6 @@
                                                                                action:@selector(insertNewNotification:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    // Testing accesory browser
-    self.accessoryBrowser = [[HMAccessoryBrowser alloc] init];
-    self.accessoryBrowser.delegate = self;
-    
-    [self.accessoryBrowser startSearchingForNewAccessories];
-    
-    
     // I NEED TO DOCUMENT THIS BETTER
     self.fliteController = [[OEFliteController alloc] init];
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
@@ -187,7 +180,6 @@
     // Stop our update timer while the view is not in the foreground
     [_updateTimer invalidate];
     _updateTimer = nil;
-    [self.accessoryBrowser stopSearchingForNewAccessories];
 }
 
 #pragma mark - Segues
