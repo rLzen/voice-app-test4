@@ -6,14 +6,23 @@
 //  Copyright (c) 2015 Richard Lorenzen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import HomeKit;
 @class HomeVoxNotificationRegion;
-@interface DetailAccessoryViewController : UIViewController
+@class DetailAccessoryViewController;
+
+@protocol ModifyAccessoryDelegate <NSObject>
+
+- (void)accessoryViewController:(DetailAccessoryViewController *)viewController
+               didSaveAccessory:(HMAccessory *)accessory;
+
+@end
 
 
-@property (strong, nonatomic) IBOutlet UITextField *accessoryUUIDTextField;
-@property (strong, nonatomic) IBOutlet UITextField *connectedBeaconUUIDTextField;
+@interface DetailAccessoryViewController : UITableViewController
 
+@property (nonatomic) HMAccessory *accessory;
+@property (nonatomic) id<ModifyAccessoryDelegate> delegate;
 @property (strong, nonatomic) HomeVoxNotificationRegion *accessoryItem;
 
 @end

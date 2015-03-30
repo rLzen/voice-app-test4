@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 Richard Lorenzen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import HomeKit;
+@import ExternalAccessory;
 
-@interface AccessoryTableViewController : UITableViewController
+
+@interface AccessoryTableViewController : UITableViewController <HMAccessoryBrowserDelegate, EAWiFiUnconfiguredAccessoryBrowserDelegate, HMHomeDelegate>
 
 @end

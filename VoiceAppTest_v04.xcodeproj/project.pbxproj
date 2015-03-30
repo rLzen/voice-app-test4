@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0DCCA31AC901EF0016C9AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0DCCA21AC901EF0016C9AB /* HomeKit.framework */; };
+		AB0DCCA51AC901FD0016C9AB /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0DCCA41AC901FD0016C9AB /* ExternalAccessory.framework */; };
 		AB262FAE1ABF32E70070DB20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB262FAD1ABF32E70070DB20 /* main.m */; };
 		AB262FB11ABF32E70070DB20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB262FB01ABF32E70070DB20 /* AppDelegate.m */; };
 		AB262FB41ABF32E70070DB20 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB262FB31ABF32E70070DB20 /* MasterViewController.m */; };
@@ -23,7 +25,6 @@
 		AB8E40581ABFB9100028CFD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40571ABFB9100028CFD7 /* AVFoundation.framework */; };
 		AB8E405A1ABFB9190028CFD7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */; };
 		ABB731861AC3600D00F830EE /* DetailAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB731851AC3600D00F830EE /* DetailAccessoryViewController.m */; };
-		ABB731891AC3604F00F830EE /* AccessoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB731881AC3604F00F830EE /* AccessoryTableViewCell.m */; };
 		ABB7318D1AC3616500F830EE /* AccessoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB7318C1AC3616500F830EE /* AccessoryTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB0DCCA11AC901EF0016C9AB /* VoiceAppTest_v04.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VoiceAppTest_v04.entitlements; sourceTree = "<group>"; };
+		AB0DCCA21AC901EF0016C9AB /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		AB0DCCA41AC901FD0016C9AB /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		AB262FA81ABF32E70070DB20 /* VoiceAppTest_v04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceAppTest_v04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB262FAC1ABF32E70070DB20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB262FAD1ABF32E70070DB20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,8 +68,6 @@
 		AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		ABB731841AC3600D00F830EE /* DetailAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailAccessoryViewController.h; sourceTree = "<group>"; };
 		ABB731851AC3600D00F830EE /* DetailAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailAccessoryViewController.m; sourceTree = "<group>"; };
-		ABB731871AC3604F00F830EE /* AccessoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessoryTableViewCell.h; path = ../AccessoryTableViewCell.h; sourceTree = "<group>"; };
-		ABB731881AC3604F00F830EE /* AccessoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessoryTableViewCell.m; path = ../AccessoryTableViewCell.m; sourceTree = "<group>"; };
 		ABB7318B1AC3616500F830EE /* AccessoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessoryTableViewController.h; sourceTree = "<group>"; };
 		ABB7318C1AC3616500F830EE /* AccessoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessoryTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0DCCA51AC901FD0016C9AB /* ExternalAccessory.framework in Frameworks */,
 				AB8E405A1ABFB9190028CFD7 /* AudioToolbox.framework in Frameworks */,
+				AB0DCCA31AC901EF0016C9AB /* HomeKit.framework in Frameworks */,
 				AB8E40581ABFB9100028CFD7 /* AVFoundation.framework in Frameworks */,
 				AB8E40531ABFB8DA0028CFD7 /* OpenEars.framework in Frameworks */,
 				AB8E40541ABFB8DA0028CFD7 /* Slt.framework in Frameworks */,
@@ -95,6 +99,8 @@
 		AB262F9F1ABF32E70070DB20 = {
 			isa = PBXGroup;
 			children = (
+				AB0DCCA41AC901FD0016C9AB /* ExternalAccessory.framework */,
+				AB0DCCA21AC901EF0016C9AB /* HomeKit.framework */,
 				AB8E40551ABFB9000028CFD7 /* AcousticModelEnglish.bundle */,
 				AB8E40591ABFB9190028CFD7 /* AudioToolbox.framework */,
 				AB8E40571ABFB9100028CFD7 /* AVFoundation.framework */,
@@ -118,6 +124,7 @@
 		AB262FAA1ABF32E70070DB20 /* VoiceAppTest_v04 */ = {
 			isa = PBXGroup;
 			children = (
+				AB0DCCA11AC901EF0016C9AB /* VoiceAppTest_v04.entitlements */,
 				AB262FAF1ABF32E70070DB20 /* AppDelegate.h */,
 				AB262FB01ABF32E70070DB20 /* AppDelegate.m */,
 				AB262FB21ABF32E70070DB20 /* MasterViewController.h */,
@@ -168,8 +175,6 @@
 			children = (
 				ABB731841AC3600D00F830EE /* DetailAccessoryViewController.h */,
 				ABB731851AC3600D00F830EE /* DetailAccessoryViewController.m */,
-				ABB731871AC3604F00F830EE /* AccessoryTableViewCell.h */,
-				ABB731881AC3604F00F830EE /* AccessoryTableViewCell.m */,
 				ABB7318B1AC3616500F830EE /* AccessoryTableViewController.h */,
 				ABB7318C1AC3616500F830EE /* AccessoryTableViewController.m */,
 			);
@@ -225,8 +230,15 @@
 				TargetAttributes = {
 					AB262FA71ABF32E70070DB20 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = QXGN2SSU2K;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
 								enabled = 1;
 							};
 						};
@@ -283,7 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABB731861AC3600D00F830EE /* DetailAccessoryViewController.m in Sources */,
-				ABB731891AC3604F00F830EE /* AccessoryTableViewCell.m in Sources */,
 				AB262FB11ABF32E70070DB20 /* AppDelegate.m in Sources */,
 				AB262FB41ABF32E70070DB20 /* MasterViewController.m in Sources */,
 				AB262FD61ABF76050070DB20 /* BeaconTableViewCell.m in Sources */,
@@ -412,6 +423,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VoiceAppTest_v04/VoiceAppTest_v04.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Framework",
@@ -419,6 +433,7 @@
 				INFOPLIST_FILE = VoiceAppTest_v04/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -426,6 +441,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VoiceAppTest_v04/VoiceAppTest_v04.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Framework",
@@ -433,6 +451,7 @@
 				INFOPLIST_FILE = VoiceAppTest_v04/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

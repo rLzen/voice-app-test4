@@ -23,7 +23,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
     // Set up Core Location Manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -33,13 +33,16 @@
     }
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+        [application registerUserNotificationSettings:
+         [UIUserNotificationSettings settingsForTypes:
+          UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     
     // Load any previously registered notifications
     [self loadNotificationRegions];
     
     [self.locationManager startUpdatingLocation];
+    
     return YES;
 }
 
@@ -78,7 +81,7 @@
     [_activeNotificationRegions addObject:newRegion];
     
     // Set up a region based on the parameters specified by the user
-    CLBeaconRegion* region = [self buildBeaconRegionForNotificationRegion:newRegion];
+    CLBeaconRegion *region = [self buildBeaconRegionForNotificationRegion:newRegion];
     if(region)
     {
         // Notify on entry if the user specified a "hello" message

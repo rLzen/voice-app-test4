@@ -221,7 +221,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -243,7 +243,7 @@
     {
         // We're in the region, so use proximity values from the last ranging
         // operation to update the view
-        NSArray* proximityDescriptions = @[ @"Unknown", @"Immediate", @"Near", @"Far"];
+        NSArray *proximityDescriptions = @[ @"Unknown", @"Immediate", @"Near", @"Far"];
         cell.beaconProximityLabel.text = proximityDescriptions[region.lastProximity];
         cell.beaconRangeLabel.text = [NSString stringWithFormat:@"%.2fm", region.lastAccuracy];
         cell.beaconRSSILabel.text = [NSString stringWithFormat:@"%lddB", region.lastRSSI];
